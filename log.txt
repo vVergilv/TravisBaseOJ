@@ -1,0 +1,66 @@
+程序开始运行
+以下为shellcheck检查结果
+
+In imageProcess.sh line 38:
+    path=($dir)
+          ^--^ SC2206: Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+
+
+In imageProcess.sh line 39:
+    for file in "$path"/*.png;do
+                 ^---^ SC2128: Expanding an array without an index only gives the first element.
+
+
+In imageProcess.sh line 40:
+        ( convert "$file" -compress JPEG -quality $quality "$out"/"compressed_${file##*/}.jpg")
+                                                                 ^-- SC2140: Word is of the form "A"B"C" (B indicated). Did you mean "ABC" or "A\"B\"C"?
+
+
+In imageProcess.sh line 48:
+    path=($dir)
+          ^--^ SC2206: Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+
+
+In imageProcess.sh line 49:
+    for file in "$path"/*.*;do
+                 ^---^ SC2128: Expanding an array without an index only gives the first element.
+
+
+In imageProcess.sh line 51:
+            convert "$file" -resize $resize "$out"/"resolution_${file##*/}"
+                                                  ^-- SC2140: Word is of the form "A"B"C" (B indicated). Did you mean "ABC" or "A\"B\"C"?
+
+
+In imageProcess.sh line 61:
+    path=($dir)
+          ^--^ SC2206: Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+
+
+In imageProcess.sh line 62:
+    for file in "$path"/*.*;do
+                 ^---^ SC2128: Expanding an array without an index only gives the first element.
+
+
+In imageProcess.sh line 74:
+    path=($dir)
+          ^--^ SC2206: Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+
+
+In imageProcess.sh line 75:
+    for file in "$path"/*.*;do
+                 ^---^ SC2128: Expanding an array without an index only gives the first element.
+
+
+In imageProcess.sh line 84:
+    path=($dir)
+          ^--^ SC2206: Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+
+
+In imageProcess.sh line 85:
+    for file in "$path"/*.*;do
+                 ^---^ SC2128: Expanding an array without an index only gives the first element.
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2128 -- Expanding an array without an ind...
+  https://www.shellcheck.net/wiki/SC2140 -- Word is of the form "A"B"C" (B in...
+  https://www.shellcheck.net/wiki/SC2206 -- Quote to prevent word splitting/g...

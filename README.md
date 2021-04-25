@@ -23,7 +23,7 @@
 
 
 ## 完成情况
-
+线上测试情况![](https://travis-ci.com/vVergilv/TravisBaseOJ.svg?branch=master&status=passed)
 #### 任务一：用bash编写一个图片批处理脚本，实现以下功能：
 - [x] 支持命令行参数方式使用不同功能
 - [x] 支持对指定目录下所有支持格式的图片文件进行批处理
